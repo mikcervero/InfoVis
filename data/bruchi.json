@@ -1,0 +1,54 @@
+[
+    {
+        "name": "bruco1",
+        "spor": 200,
+        "spver": 0
+    },
+    {
+        "name": "bruco2",
+        "spor": 600,
+        "spver": 0
+    },
+    {
+       "name": "bruco3",
+        "spor": 1000,
+        "spver": 0
+    },
+    {
+        "name": "bruco4",
+        "spor": 0,
+        "spver": 200
+    },
+    {
+        "name": "bruco5",
+        "spor": 400,
+        "spver": 200
+    },
+    {
+        "name": "bruco6",
+        "spor": 800,
+        "spver": 200
+    },
+    {
+        "name": "bruco7",
+        "spor": 1200,
+        "spver": 200
+    },
+    {
+        "name": "bruco8",
+        "spor": 200,
+        "spver": 400
+    },
+    
+    {
+        "name": "bruco9",
+        "spor": 600,
+        "spver": 400
+    },
+    {
+        "name": "bruco10",
+        "spor": 1000,
+        "spver": 400
+       }
+    
+]
