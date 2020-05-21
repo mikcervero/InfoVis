@@ -1,44 +1,75 @@
 
 const svg = d3.select('body')
-  .append ('svg')
-    .attr('width',1360)
-    .attr('height',600);
+    .append ('svg')
+    .attr('width',1400)
+    .attr('height',900)
     
 
 //create margins and dimension
-const margin= {top:10, right:10, bottom: 10, left:10};
-const Swidth = 1360 - margin.left - margin.right;
-const Sheight = 600 - margin.bottom - margin.top;
+const margin= {top:20, right:20, bottom: 20, left:30};
+const Swidth = 1400 - margin.left - margin.right;
+const Sheight = 900 - margin.top - margin.bottom;
 
-const margingroup= svg.append('g')
-          .attr('width',Swidth)
-          .attr('height',Sheight)
-          .attr('transform', 'translate('+ margin.left +','+ margin.top + ')')
 
-const bruchi= margingroup.append('g').attr('class', 'bruco')
-const farfalle= margingroup.append('g').attr('class', 'farfalla')
+const backgroundBruchi= svg.append('rect')
+   .attr('width',Swidth)
+   .attr('height',Sheight)
+   .attr('class', 'bruco')
+   .attr('transform', 'translate('+ margin.left +','+ margin.top + ')')
+   .attr('fill','#c6f0cf');
+
+const backgroundFarfalle= svg.append('rect')
+   .attr('width',Swidth)
+   .attr('height',Sheight)
+   .attr('class', 'farfalla')
+   .attr('transform', 'translate('+ margin.left +','+ margin.top + ')')
+   .attr('fill','#adcdf0')
+   .style("opacity", 0);
+
+
+const bruchi= svg.append('g')
+   .attr('class', 'bruchi')
+   .attr('width',Swidth)
+   .attr('height',Sheight)
+   .attr('transform', 'translate('+ margin.left +','+ margin.top + ')');
+
+const farfalle= svg.append('g')
+   .attr('class', 'farfalle')
+   .attr('width',Swidth)
+   .attr('height',Sheight)
+   .attr('transform', 'translate('+ margin.left +','+ margin.top + ')');
+
 
 d3.json('../data/bruchi.json').then( data => {
     
+     
+    const Ymax= 100+23
+    const Ymin= 65-3
+    const brucoHeigth = Ymax-Ymin
+    
+    
     const y = d3.scaleLinear()
-    .domain([0,d3.max(data,d=> d.spver) + 100 + 23])
-              .range([0,Sheight]);
-             
+             .domain([0,d3.max(data,d=> d.spver) + Ymax])
+             .range([0,Sheight-brucoHeigth]);
+    
+    
+    const Xmax= 23+234
+    const Xmin= 135-10
+    const brucoWidth = Xmax-Xmin
+    
     const x = d3.scaleLinear()
-             .domain([0,d3.max(data,d=> d.spor) + 246 + 23])
-             .range([0,Swidth]);
+             .domain([0,d3.max(data,d=> d.spor) + Xmax])
+             .range([0,Swidth-brucoWidth]);
 
     
-
     const bruco= bruchi.selectAll('g')
-              .data(data)
-              
+                 .data(data)
+    
     
 
-    const group = bruco.enter().append('g').attr('class', 'bruco')
+    const group = bruco.enter().append('g').attr('class', 'bruco').attr('stroke', 'black').attr('transform', function(d) { return "translate(" + x(d.spor) + "," + y(d.spver) + ")"; });
     
          
-    
        
   
     //bruco
@@ -46,92 +77,92 @@ d3.json('../data/bruchi.json').then( data => {
   group.append('circle')
     .attr('r', 10)
     .attr('fill','#4cc267')
-    .attr('cx', d => x(d.spor + 135))
-    .attr('cy', d => y(d.spver + 110));
-
+    .attr('cx', 135)
+    .attr('cy', 110);
+    
 
   group.append('circle')
     .attr('r', 15)
     .attr('fill','#4cc267')
-    .attr('cx', d => x(d.spor + 150))
-    .attr('cy', d => y(d.spver + 103));
+    .attr('cx',150)
+    .attr('cy', 103);
    
     
  group.append('circle')
     .attr('r', 18)
     .attr('fill','#4cc267')
-    .attr('cx',d => x(d.spor + 160))
-    .attr('cy',d => y(d.spver + 95));
+    .attr('cx',160)
+    .attr('cy', 95);
     
     
  group.append('circle')
     .attr('r', 18)
     .attr('fill','#4cc267')
-    .attr('cx', d => x(d.spor + 177))
-    .attr('cy', d => y(d.spver + 85));
+    .attr('cx', 177)
+    .attr('cy', 85);
     
 
  group.append('circle')
     .attr('r', 18)
     .attr('fill','#4cc267')
-    .attr('cx',d => x(d.spor + 192))
-    .attr('cy',d => y(d.spver +  86));
+    .attr('cx',192)
+    .attr('cy',86);
     
 
  group.append('circle')
     .attr('r', 19)
     .attr('fill','#4cc267')
-    .attr('cx', d => x(d.spor + 208))
-    .attr('cy', d => y(d.spver + 98));
+    .attr('cx', 208)
+    .attr('cy', 98);
     
 
  group.append('circle')
     .attr('r', 23)
     .attr('fill','#4cc267')
-    .attr('cx',d => x(d.spor + 234))
-    .attr('cy',d => y(d.spver +  100));
+    .attr('cx',234)
+    .attr('cy',100);
     
 
  group.append('circle')
     .attr('r', 3)
     .attr('fill','black')
-    .attr('cx',d => x(d.spor + 242))
-    .attr('cy',d => y(d.spver +  92));
+    .attr('cx', 242)
+    .attr('cy',92);
     
 
  group.append('line')
-    .attr('x1',d => x(d.spor +  232))
-    .attr('y1',  d => y(d.spver + 85))
-    .attr('x2', d => x(d.spor + 237))
-    .attr('y2',  d => y(d.spver +  65))
+    .attr('x1', 232)
+    .attr('y1', 85)
+    .attr('x2', 237)
+    .attr('y2', 65)
     .attr('stroke','#75c888');
     
 
  group.append('line')
-    .attr('x1', d => x(d.spor + 242))
-    .attr('y1', d => y(d.spver +  80))
-    .attr('x2', d => x(d.spor + 246))
-    .attr('y2',d => y(d.spver +  65))
+    .attr('x1', 242)
+    .attr('y1', 80)
+    .attr('x2', 246)
+    .attr('y2', 65)
     .attr('stroke','#75c888');
     
 
  group.append('circle')
     .attr('r', 3)
     .attr('fill','#75c888')
-    .attr('cx', d => x(d.spor + 246))
-    .attr('cy', d => y(d.spver +  65));
+    .attr('cx', 246)
+    .attr('cy',  65);
    
 
  group.append('circle')
     .attr('r', 3)
     .attr('fill','#75c888')
-    .attr('cx', d => x(d.spor + 237))
-    .attr('cy', d => y(d.spver +  65))
+    .attr('cx', 237)
+    .attr('cy',65);
     
     
    //add event
     
-    margingroup.selectAll('g')
+    svg.selectAll('g')
      .on('click', handleClick);
     
     
@@ -139,119 +170,124 @@ d3.json('../data/bruchi.json').then( data => {
 
 
 d3.json('../data/farfalle.json').then( data => {
-
-const y = d3.scaleLinear()
-.domain([0,d3.max(data,d=> d.spver) + 190])
-          .range([0,Sheight]);
-         
-const x = d3.scaleLinear()
-         .domain([0,d3.max(data,d=> d.spor) + 225])
-         .range([0,Swidth]);
-
-
-
-const farfalla= farfalle.selectAll('g')
-          .data(data)
-          
     
-    var prova= (d,i) =>{
-        return (data.map(farfalla => farfalla.spor)[i]);
-    }
+    
+    const Ymax= 190
+    const Ymin= 75
+    const farfallaHeigth = Ymax-Ymin
+
+    const y = d3.scaleLinear()
+        .domain([0,d3.max(data,d=> d.spver) + Ymax])
+        .range([0,Sheight-farfallaHeigth]);
+    
+    const Xmax= 220
+    const Xmin= 50
+    const farfallaWidth = Xmax-Xmin
+         
+    const x = d3.scaleLinear()
+         .domain([0,d3.max(data,d=> d.spor) + Xmax])
+         .range([0,Swidth-farfallaWidth]);
+
+  
+
+    const farfalla= farfalle.selectAll('g')
+          .data(data)
+        
     
 
     const group2 = farfalla.enter().append('g').attr('class', 'farfalla').style("opacity", 0).attr('transform', function(d) { return "translate(" + x(d.spor) + "," + y(d.spver) + ")"; });
     
+    
+    
     const alifarfalla= group2.append('g').attr('fill',d=> d.ali).attr('stroke',d=> d.contorno).attr("stroke-width", 2)
     
     
-
-    alifarfalla.append("path").attr("d", 'M 145 121 L 220 75 L 195 130 z');
-          
-    
-    alifarfalla.append("path").attr("d", 'M 145 121 L 185 130 L 180 190 z');
-
     alifarfalla.append("path").attr("d", 'M 125 121 L 50 75 L 74 130 z');
-
     alifarfalla.append("path").attr("d", 'M 125 121 L 85 130 L 90 190 z');
     
-group2.append('circle')
-           .attr('r', 15)
-           .attr('fill','#98a3ad')
-           .attr('cx', 135)
-           .attr('cy', 110);
-           
+    alifarfalla.append("path").attr("d", 'M 145 121 L 185 130 L 180 190 z');
+    alifarfalla.append("path").attr("d", 'M 145 121 L 220 75 L 195 130 z');
+
+    
+    const corpofarfalla= group2.append('g').attr('stroke', 'black');
+
+    
+    corpofarfalla.append('circle')
+        .attr('r', 9)
+        .attr('fill','#98a3ad')
+        .attr('cx',  135)
+        .attr('cy',  158);
+    
+    corpofarfalla.append('circle')
+        .attr('r', 12)
+        .attr('fill','#98a3ad')
+        .attr('cx', 135)
+        .attr('cy', 143);
     
     
-group2.append('circle')
-           .attr('r', 12)
-           .attr('fill','#98a3ad')
-           .attr('cx', 135)
-           .attr('cy', 128);
+    corpofarfalla.append('circle')
+        .attr('r', 12)
+        .attr('fill','#98a3ad')
+        .attr('cx', 135)
+        .attr('cy', 128);
     
     
-group2.append('circle')
-           .attr('r', 12)
-           .attr('fill','#98a3ad')
-           .attr('cx', 135)
-           .attr('cy', 143);
+    corpofarfalla.append('circle')
+       .attr('r', 15)
+       .attr('fill','#98a3ad')
+       .attr('cx', 135)
+       .attr('cy', 110);
+    
+    corpofarfalla.append('line')
+        .attr('x1',135)
+        .attr('y1',  95)
+        .attr('x2', 130)
+        .attr('y2',  83)
+        .attr('stroke','black');
     
     
-group2.append('circle')
-           .attr('r', 9)
-           .attr('fill','#98a3ad')
-           .attr('cx',  135)
-           .attr('cy',  158);
+    corpofarfalla.append('line')
+        .attr('x1', 137)
+        .attr('y1', 95)
+        .attr('x2', 142)
+        .attr('y2',83)
+        .attr('stroke','black');
     
-group2.append('line')
-           .attr('x1',135)
-           .attr('y1',  95)
-           .attr('x2', 130)
-           .attr('y2',  83)
-           .attr('stroke','black');
-    
-    
-group2.append('line')
-           .attr('x1', 137)
-           .attr('y1', 95)
-           .attr('x2', 142)
-           .attr('y2',83)
-           .attr('stroke','black');
-    
-group2.append('circle')
-           .attr('r', 3)
-           .attr('fill','black')
-           .attr('cx', 142)
-           .attr('cy', 83);
+    corpofarfalla.append('circle')
+        .attr('r', 3)
+        .attr('fill','black')
+        .attr('cx', 142)
+        .attr('cy', 83);
     
     
-group2.append('circle')
-           .attr('r', 3)
-           .attr('fill','black')
-           .attr('cx', 130)
-           .attr('cy', 83)
+    corpofarfalla.append('circle')
+        .attr('r', 3)
+        .attr('fill','black')
+        .attr('cx', 130)
+        .attr('cy', 83)
     
-group2.append('circle')
-            .attr('r', 3)
-            .attr('fill','black')
-            .attr('cx', 132)
-            .attr('cy', 105);
+   corpofarfalla.append('circle')
+        .attr('r', 3)
+        .attr('fill','black')
+        .attr('cx', 132)
+        .attr('cy', 105);
     
     
-group2.append('circle')
-            .attr('r', 3)
-            .attr('fill','black')
-            .attr('cx', 138)
-            .attr('cy', 105);
+   corpofarfalla.append('circle')
+        .attr('r', 3)
+        .attr('fill','black')
+        .attr('cx', 138)
+        .attr('cy', 105);
     
 
 });
 
 const handleClick = (d,i,n) => {
     d3.select(n[i])
-    margingroup.selectAll('.bruco')
+    svg.selectAll('.bruco')
     .transition().duration(100)
-       .remove()
-    margingroup.selectAll('.farfalla')
+       .style("opacity", 0)
+    svg.selectAll('.farfalla')
     .transition().style("opacity", 1)
 };
 

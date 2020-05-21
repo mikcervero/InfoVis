@@ -1,74 +1,76 @@
 [
     {
-        "name": "farfalla1",
-        "spor": 200,
+        "name": "blu",
+        "spor": 210,
         "spver": 0,
+        "ali": "#0e62bb",
+        "contorno": "black"
+        
+    },
+    {
+        "name": "azzurro-medio",
+        "spor": 410,
+        "spver": 200,
         "ali": "#67a0de",
+        "contorno": "#09407a"
+    },
+    {
+       "name": "giallo-scuro",
+        "spor": 1010,
+        "spver": 0,
+        "ali": "#b58b0f",
+        "contorno": "black"
+        
+    },
+    {
+        "name": "azzurro-chiaro",
+        "spor": 10,
+        "spver": 200,
+        "ali": "#6fcfde",
         "contorno": "#1263ba"
     },
     {
-        "name": "farfalla2",
-        "spor": 600,
-        "spver": 0,
-        "ali": "#d45762",
-        "contorno": "#a42531"
-    },
-    {
-       "name": "farfalla3",
-        "spor": 1000,
-        "spver": 0,
-        "ali": "#f7ae72",
-        "contorno": "#c87734"
-    },
-    {
-        "name": "farfalla4",
-        "spor": 0,
-        "spver": 200,
-        "ali": "#8d69d0",
-        "contorno": "#693db9"
-    },
-    {
-        "name": "farfalla5",
-        "spor": 400,
-        "spver": 200,
+        "name": "rosa-medio",
+        "spor": 360,
+        "spver": 575,
         "ali": "#d46f8f",
         "contorno": "#a41441"
     },
     {
-        "name": "farfalla6",
-        "spor": 800,
-        "spver": 200,
+        "name": "rosa-chiaro",
+        "spor": 860,
+        "spver": 575,
         "ali": "#d796ab",
         "contorno": "#a41441"
     },
     {
-        "name": "farfalla7",
-        "spor": 1200,
+        "name": "giallo-medio",
+        "spor": 1210,
         "spver": 200,
-        "ali": "#6fcfde",
-        "contorno": "#09407a"
+        "ali": "orange",
+        "contorno": "#b58b0f"
     },
     {
-        "name": "farfalla8",
-        "spor": 200,
-        "spver": 400,
-        "ali": "#b58b0f",
-        "contorno": "black"
+        "name": "rosa-scuro",
+        "spor": 610,
+        "spver": 725,
+        "ali": "#d45762",
+        "contorno": "#a42531"
     },
     
     {
-        "name": "farfalla9",
-        "spor": 600,
-        "spver": 400,
-        "ali": "orange",
-        "contorno": "black"
+        "name": "viola",
+        "spor": 610,
+        "spver": 425,
+        "ali": "#8d69d0",
+        "contorno": "#693db9"
     },
     {
-        "name": "farfalla10",
-        "spor": 1000,
-        "spver": 400,
-        "ali": "#0e62bb",
-        "contorno": "black"
+        "name": "giallo-chiaro",
+        "spor": 810,
+        "spver": 200,
+        "ali": "#f7ae72",
+        "contorno": "#c87734"
        }
     
 ]
