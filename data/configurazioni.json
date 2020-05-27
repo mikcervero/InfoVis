@@ -1,6 +1,6 @@
 [
     {
-    "configurione" : 1,
+    "configurione" : 0,
     "spostamenti" :  [
         
      {
@@ -72,11 +72,11 @@
     },
     
     {
-        "farfalla" : "viola",
+        "farfalla" : "rosso",
         "spor": 10,
         "spver": 0,
-        "ali": "#8d69d0",
-        "contorno": "#693db9"
+        "ali": "#d0071a",
+        "contorno": "black"
        
     },
     {
@@ -88,5 +88,380 @@
         
        }
     ]
-  }
+  },
+    
+    {
+      "configurione" : 1,
+      "spostamenti" :  [
+          
+       {
+          "farfalla" : "blu",
+          "spor": 10,
+          "spver": 0,
+          "ali": "#0e62bb",
+          "contorno": "black"
+          
+          
+       },
+       {
+           "farfalla" :  "azzurro-chiaro",
+           "spor": 10,
+           "spver": 400,
+           "ali": "#6fcfde",
+           "contorno": "#1263ba"
+           
+           
+       },
+       {
+          "farfalla" :"azzurro-medio",
+          "spor": 10,
+          "spver": 200,
+          "ali": "#67a0de",
+          "contorno": "#09407a"
+         
+       },
+       {
+          "farfalla" : "giallo-scuro",
+          "spor": 810,
+          "spver": 0,
+          "ali": "#b58b0f",
+          "contorno": "black"
+          
+       },
+       
+       {
+           "farfalla" : "giallo-medio",
+           "spor": 810,
+           "spver": 200,
+           "ali": "orange",
+           "contorno": "#b58b0f"
+          
+       },
+       
+       {
+        "farfalla" : "giallo-chiaro",
+        "spor": 810,
+        "spver": 400,
+        "ali": "#f7ae72",
+        "contorno": "#c87734"
+        
+       },
+      
+      {
+         "farfalla" : "rosa-medio",
+          "spor": 410,
+          "spver": 200,
+          "ali": "#d46f8f",
+          "contorno": "#a41441"
+          
+      },
+      {
+          "farfalla" : "rosa-chiaro",
+          "spor": 410,
+          "spver": 400,
+          "ali": "#d796ab",
+          "contorno": "#a41441"
+         
+      },
+      
+      {
+         "farfalla" : "rosa-scuro",
+          "spor":  410,
+          "spver": 0,
+          "ali": "#d45762",
+          "contorno": "#a42531"
+          
+      },
+      
+      {
+          "farfalla" : "rosso",
+          "spor": 410,
+          "spver": 600,
+          "ali": "#d0071a",
+          "contorno": "black"
+         
+      }
+      
+      ]
+    },
+    {
+      "configurione" : 2,
+      "spostamenti" :  [
+          
+       {
+          "farfalla" : "blu",
+          "spor":  675,
+          "spver":  0,
+          "ali": "#0e62bb",
+          "contorno": "black"
+          
+          
+       },
+       {
+          "farfalla" :"azzurro-medio",
+          "spor":  875,
+          "spver": 200,
+          "ali": "#67a0de",
+          "contorno": "#09407a"
+         
+       },
+       {
+           "farfalla" :  "azzurro-chiaro",
+           "spor": 475,
+           "spver": 200,
+           "ali": "#6fcfde",
+           "contorno": "#1263ba"
+           
+           
+       },
+       {
+        "farfalla" : "giallo-chiaro",
+        "spor": 275,
+        "spver": 400,
+        "ali": "#f7ae72",
+        "contorno": "#c87734"
+        
+       },
+       {
+          "farfalla" : "giallo-scuro",
+          "spor": 675,
+          "spver": 400,
+          "ali": "#b58b0f",
+          "contorno": "black"
+          
+          
+       },
+       
+       {
+           "farfalla" : "giallo-medio",
+           "spor": 1075,
+           "spver": 400,
+           "ali": "orange",
+           "contorno": "#b58b0f"
+          
+       },
+      
+      {
+         "farfalla" : "rosa-medio",
+          "spor": 1275,
+          "spver": 600,
+          "ali": "#d46f8f",
+          "contorno": "#a41441"
+          
+      },
+      {
+          "farfalla" : "rosa-chiaro",
+          "spor": 75,
+          "spver": 600,
+          "ali": "#d796ab",
+          "contorno": "#a41441"
+         
+      },
+      
+      {
+         "farfalla" : "rosa-scuro",
+          "spor":  475,
+          "spver": 600,
+          "ali": "#d45762",
+          "contorno": "#a42531"
+          
+      },
+      
+      {
+          "farfalla" : "rosso",
+          "spor":  875,
+          "spver": 600,
+          "ali": "#d0071a",
+          "contorno": "black"
+         
+      }
+      
+      ]
+    },
+    {
+      "configurione" : 3,
+      "spostamenti" :  [
+          
+       {
+          "farfalla" : "blu",
+          "spor":  250,
+          "spver":  250,
+          "ali": "#0e62bb",
+          "contorno": "black"
+          
+          
+       },
+       {
+          "farfalla" :"azzurro-medio",
+          "spor":  0,
+          "spver": 250,
+          "ali": "#67a0de",
+          "contorno": "#09407a"
+         
+       },
+       {
+          "farfalla" : "giallo-scuro",
+          "spor": 1000,
+          "spver": 450,
+          "ali": "#b58b0f",
+          "contorno": "black"
+          
+          
+      },
+      {
+          "farfalla" :  "azzurro-chiaro",
+          "spor": 250,
+          "spver": 450,
+          "ali": "#6fcfde",
+          "contorno": "#1263ba"
+          
+          
+      },
+      {
+         "farfalla" : "rosa-medio",
+          "spor": 500,
+          "spver": 250,
+          "ali": "#d46f8f",
+          "contorno": "#a41441"
+          
+      },
+      {
+          "farfalla" : "rosa-chiaro",
+          "spor": 250,
+          "spver": 50,
+          "ali": "#d796ab",
+          "contorno": "#a41441"
+         
+      },
+      {
+          "farfalla" : "giallo-medio",
+          "spor": 750,
+          "spver": 650,
+          "ali": "orange",
+          "contorno": "#b58b0f"
+         
+      },
+      {
+         "farfalla" : "rosa-scuro",
+          "spor":  500,
+          "spver":  450,
+          "ali": "#d45762",
+          "contorno": "#a42531"
+          
+      },
+      
+      {
+          "farfalla" : "rosso",
+          "spor":  750,
+          "spver": 450,
+          "ali": "#d0071a",
+          "contorno": "black"
+         
+      },
+      {
+          "farfalla" : "giallo-chiaro",
+          "spor": 750,
+          "spver": 250,
+          "ali": "#f7ae72",
+          "contorno": "#c87734"
+          
+         }
+      ]
+    },
+    
+    {
+      "configurione" : 4,
+      "spostamenti" :  [
+          
+       {
+          "farfalla" : "blu",
+          "spor":  675,
+          "spver":  800,
+          "ali": "#0e62bb",
+          "contorno": "black"
+          
+          
+       },
+       {
+          "farfalla" :"azzurro-medio",
+          "spor":  875,
+          "spver": 600,
+          "ali": "#67a0de",
+          "contorno": "#09407a"
+         
+       },
+       {
+           "farfalla" :  "azzurro-chiaro",
+           "spor": 475,
+           "spver": 600,
+           "ali": "#6fcfde",
+           "contorno": "#1263ba"
+           
+           
+       },
+       {
+         "farfalla" : "giallo-chiaro",
+         "spor": 475,
+         "spver": 200,
+         "ali": "#f7ae72",
+         "contorno": "#c87734"
+        
+       },
+       {
+          "farfalla" : "giallo-scuro",
+          "spor": 675,
+          "spver": 0,
+          "ali": "#b58b0f",
+          "contorno": "black"
+          
+          
+       },
+       
+       {
+           "farfalla" : "giallo-medio",
+           "spor": 875,
+           "spver": 200,
+           "ali": "orange",
+           "contorno": "#b58b0f"
+          
+       },
+      
+      {
+         "farfalla" : "rosa-medio",
+          "spor": 1275,
+          "spver": 400,
+          "ali": "#d46f8f",
+          "contorno": "#a41441"
+          
+      },
+      {
+          "farfalla" : "rosa-chiaro",
+          "spor": 75,
+          "spver": 400,
+          "ali": "#d796ab",
+          "contorno": "#a41441"
+         
+      },
+      
+      {
+         "farfalla" : "rosa-scuro",
+          "spor":  475,
+          "spver": 400,
+          "ali": "#d45762",
+          "contorno": "#a42531"
+          
+      },
+      
+      {
+          "farfalla" : "rosso",
+          "spor":  875,
+          "spver": 400,
+          "ali": "#d0071a",
+          "contorno": "black"
+         
+      }
+      
+      ]
+    }
+    
 ]

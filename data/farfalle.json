@@ -59,11 +59,11 @@
     },
     
     {
-        "name": "viola",
+        "name": "red",
         "spor": 610,
         "spver": 425,
-        "ali": "#8d69d0",
-        "contorno": "#693db9"
+        "ali": "#d0071a",
+        "contorno": "black"
     },
     {
         "name": "giallo-chiaro",
