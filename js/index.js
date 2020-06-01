@@ -10,7 +10,9 @@ const margin= {top:20, right:20, bottom: 20, left:30};
 const Swidth = 1400 - margin.left - margin.right;
 const Sheight = 900 - margin.top - margin.bottom;
 
-const YmaxBruco= 100+23;
+// per i valori vedere le funzioni disegnobruco e disegnofarfalla
+const YmaxBruco= 100+23;  // 100 rappresenta il valore maggiore per la coordinata y inserita nel disegno, essendo la cordinata del centro di un cerchio bisogna
+                         //aggiungere il raggio (23)
 const YminBruco= 65-3;
 const XmaxBruco= 23+234;
 const XminBruco= 135-10;
@@ -23,15 +25,11 @@ const XminFarfalla= 50;
 
 createBruchi(1);
  
-
+// il parametro passato alla funzione indica se la creazione dei bruchi è quella inziale, in modo tale che supporti il click altrimenti è quella finali ovvero fine progetto
 function createBruchi(richiesta){
     
-  
-   
   d3.json('../data/bruchi.json').then( data => {
       
-    console.log(richiesta);
-    
     const bruchi= svg.append('g')
        .attr('class', 'bruchi')
        .attr('width',Swidth)
@@ -44,7 +42,7 @@ function createBruchi(richiesta){
     
     const backgroundBruchi= createBackground(animale,color);
      
-    
+    //altezza effettiva del bruco
     const brucoHeigth = YmaxBruco-YminBruco
     
     
@@ -52,7 +50,7 @@ function createBruchi(richiesta){
              .domain([0,d3.max(data,d=> d.spver) + YmaxBruco])
              .range([0,Sheight-brucoHeigth]);
     
-    
+    //lunghezza effettiva del bruco
     const brucoWidth = XmaxBruco-XminBruco
     
     const x = d3.scaleLinear()
@@ -69,7 +67,7 @@ function createBruchi(richiesta){
          .attr('stroke', 'black')
          .attr('transform', function(d) { return "translate(" + x(d.spor) + "," + y(d.spver) + ")"; });
          
-         
+     //disegno l'immagine di un bruco
     disegnoBruco(group);
       
     if (richiesta==1){
@@ -86,8 +84,7 @@ const handleClick = (d,i,n) =>{
     
     d3.select(n[i]);
 
-    svg.selectAll(".bruchi").remove();
-//       .style("opacity", 0)
+    svg.selectAll(".bruchi").exit().remove();
         
     createFarfalle();
     
@@ -113,26 +110,24 @@ function createFarfalle(){
     d3.json('../data/farfalle.json').then( data => {
         
         
-        
+        //altezza effettiva della farfalla
         const farfallaHeigth = YmaxFarfalla-YminFarfalla
 
         const y = d3.scaleLinear()
             .domain([0,d3.max(data,d=> d.spver) + YmaxFarfalla])
             .range([0,Sheight-farfallaHeigth]);
         
-        
+        //lunghezza effettiva della farfalla
         const farfallaWidth = XmaxFarfalla-XminFarfalla
              
         const x = d3.scaleLinear()
              .domain([0,d3.max(data,d=> d.spor) + XmaxFarfalla])
              .range([0,Swidth-farfallaWidth]);
 
-      
-
+    
         const farfalla= farfalle.selectAll('g')
               .data(data)
             
-        
 
         const group2 = farfalla.enter().append('g').attr('class', 'farfalla').attr('transform', function(d) { return "translate(" + x(d.spor) + "," + y(d.spver) + ")"; });
         
@@ -158,30 +153,10 @@ const handleClickFarf = (d,i,n) => {
     
     d3.select(n[i]);
 
-    svg.selectAll('.farfalle').remove();
+    svg.selectAll('.farfalle').exit().remove();
 
     createFarfalleConfigurazioni();
 };
-
-
-
-
-function XScaleDomain(data,x) {
-
-    var spostamenti = data["spostamenti"];
-
-    x.domain([0, d3.max(spostamenti, function(d) { return d.spor; })+ XmaxFarfalla]);
-
-}
-
-
-function YScaleDomain(data,y){
-    var spostamenti = data["spostamenti"];
-    y.domain([0, d3.max(spostamenti, function(d) { return d.spver; })+YmaxFarfalla]);
-}
-
-
-
 
 
 
@@ -201,11 +176,8 @@ function createFarfalleConfigurazioni() {
 
     d3.json('../data/configurazioni.json').then(function(data) {
     
-
-   
     const farfallaHeigth = YmaxFarfalla-YminFarfalla;
 
-    
     const farfallaWidth = XmaxFarfalla-XminFarfalla
 
     const y = d3.scaleLinear()
@@ -213,9 +185,11 @@ function createFarfalleConfigurazioni() {
 
     const x = d3.scaleLinear()
     .range([0,Swidth-farfallaWidth]);
-
-    var count=0;
         
+    // inizializzo un contatore
+    var count=0;
+     
+    // inizializzazione, prima configurazione
      XScaleDomain(data[0],x);
      YScaleDomain(data[0],y);
      project(data[0],x,y,count,data);
@@ -247,9 +221,10 @@ function project(data,x,y,count,allData){
    
         d3.select(n[i]);
 
-        svg.selectAll('.farfallaConfig').remove();
-        
+        // verifico che le configurazione, fino ad ora attraversate, sono minori di 5 ovvero quelle presenti nel file configurazioni.json
         if (count<5){
+            
+        svg.selectAll('.farfallaConfig').remove();
         
         prossimeConfigurazioni(allData[count],x,y,count,allData)
             
@@ -257,14 +232,12 @@ function project(data,x,y,count,allData){
         
         else {
             
-            svg.selectAll('.farfalle').remove();
+            svg.selectAll('.farfalle').exit().remove();
             createBruchi(2);
             
         }
        
         });
-   
-    
    
 }
 
@@ -278,6 +251,22 @@ function prossimeConfigurazioni(data,x,y,count,allData) {
 
 }
 
+function XScaleDomain(data,x) {
+
+    var spostamenti = data["spostamenti"];
+
+    x.domain([0, d3.max(spostamenti, function(d) { return d.spor; })+ XmaxFarfalla]);
+
+}
+
+
+function YScaleDomain(data,y){
+    
+    var spostamenti = data["spostamenti"];
+    
+    y.domain([0, d3.max(spostamenti, function(d) { return d.spver; })+YmaxFarfalla]);
+    
+}
 
 
 function createBackground(animale,color){
@@ -289,9 +278,6 @@ function createBackground(animale,color){
            .attr('fill',color);
     
 }
-
-
-
 
 
 function disegnoFarfalla(alifarfalla,corpofarfalla){
