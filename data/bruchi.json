@@ -1,52 +1,52 @@
 [
     {
-        "name": "bruco1",
+        "name": "1",
         "spor": 210,
         "spver": 0
     },
     {
-        "name": "bruco2",
+        "name": "2",
         "spor": 610,
         "spver": 0
     },
     {
-       "name": "bruco3",
+       "name": "3",
         "spor": 1010,
         "spver": 0
     },
     {
-        "name": "bruco4",
+        "name": "4",
         "spor": 10,
         "spver": 200
     },
     {
-        "name": "bruco5",
+        "name": "5",
         "spor": 410,
         "spver": 200
     },
     {
-        "name": "bruco6",
+        "name": "6",
         "spor": 810,
         "spver": 200
     },
     {
-        "name": "bruco7",
+        "name": "7",
         "spor": 1210,
         "spver": 200
     },
     {
-        "name": "bruco8",
+        "name": "8",
         "spor": 210,
         "spver": 400
     },
     
     {
-        "name": "bruco9",
+        "name": "9",
         "spor": 610,
         "spver": 400
     },
     {
-        "name": "bruco10",
+        "name": "10",
         "spor": 1010,
         "spver": 400
        }
