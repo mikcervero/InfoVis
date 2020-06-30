@@ -184,27 +184,6 @@ function project(data,x,y,count,allData){
  
          }
 
-
-    
-    //  svg.selectAll('.farfallaConfig').on('click', function(d,i,n){
-    
-    //      d3.select(n[i]);
- 
-    //      for (i =0; i<10 ;i++) {
-         
-    //      XScaleDomain(allData[count+1],x);
-    //      YScaleDomain(allData[count+1],y);
-         
-    //      svg.selectAll('#butterfly'+allData[count]["spostamenti"][i].farfalla).transition().duration(2000).attr('transform',function(d) { return "translate(" + x((allData[count+1]["spostamenti"][i]).spor) + "," + y((allData[count+1]["spostamenti"][i]).spver) + ")"; });
-         
-    //      prossimeConfigurazioni(allData[count+1],x,y,count+1,allData);
-
-        
-    //      }
-
-
-    //     });  
-
     }
 
   
@@ -310,11 +289,6 @@ function YScaleDomain(data,y){
 
 function disegnoFarfalla(alifarfalla,corpofarfalla){
     
-    
-     //alifarfalla.append("path").attr("d", 'M 125 121 L 50 75 L 74 130 z');
-     //alifarfalla.append("path").attr("d", 'M 125 121 L 85 130 L 90 190 z');
-     //alifarfalla.append("path").attr("d", 'M 145 121 L 185 130 L 180 190 z');
-     // alifarfalla.append("path").attr("d", 'M 145 121 L 220 75 L 195 130 z');
 
      alifarfalla.append("path").attr("d", 'M 125 121 L 125 121 L 125 121 z').attr('class','ala1');
      alifarfalla.append("path").attr("d", 'M 125 121 L 125 121 L 125 121 z').attr('class','ala2');
