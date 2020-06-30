@@ -13,16 +13,6 @@ nuova configurazione. Le 5 configurazioni successive sono descritte in
 un file json. Dopo la quinta configurazione le farfalle tornano ad
 essere bruchi e si riposizionano nella configurazione originale.
 
-L'organizzazione del porgetto prevede 3 file di tipo json:
-
-1. **bruchi.json** : al suo interno vengono definite le posizioni dei 10 bruchi.
-
-2. **farfalle.json** : al suo interno vengono definite le posizioni delle 10 farfalle che si presentano successivamente al primo click, effettuato su un qualsiasi bruco presente nella schermo.
-
-3. **configurazioni.json** : come richiesto dalle specifiche, in questo file sono definite le 5   
-     configurazioni successive che le farfalle assumono ad ogni click.
-
-
 
 
 
