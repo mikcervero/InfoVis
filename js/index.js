@@ -245,8 +245,8 @@ function prossimeConfigurazioni(data,x,y,count,allData){
        svg.selectAll('.corpobruco4').transition().delay(3000).duration(2500).attr('fill', '#4cc267').attr('r', 19).attr("transform", "rotate(+0) translate(0,+0)");
        svg.selectAll('.corpobruco5').transition().delay(3000).duration(2500).attr('fill', '#4cc267').attr('r', 23).attr("transform", "rotate(+0) translate(0,+0)");
        svg.selectAll('.corpobruco6').transition().delay(3000).duration(2500).attr('r', 3).attr("transform", "rotate(0) translate(0,0)");
-       svg.selectAll('.antenna1bruco').transition().delay(3000).duration(1000).attr('y2',65).attr('x2', 237);
-       svg.selectAll('.antenna2bruco').transition().delay(3000).duration(1000).attr('y2',65).attr('x2', 246);
+       svg.selectAll('.antenna1bruco').transition().delay(3000).duration(2500).attr('y2',65).attr('x2', 237);
+       svg.selectAll('.antenna2bruco').transition().delay(3000).duration(2500).attr('y2',65).attr('x2', 246);
      
        svg.selectAll('.farfallaConfig').transition().delay(5000).remove()
         
